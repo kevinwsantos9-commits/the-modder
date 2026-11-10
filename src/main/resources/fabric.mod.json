@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "themodder",
+  "version": "${version}",
+  "name": "The Modder",
+  "description": "Mod de poderes e habilidades (RPG): nível, XP, mana e 6 poderes evoluíveis.",
+  "authors": ["The Modder"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.themodder.TheModder"],
+    "client": ["com.themodder.client.TheModderClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": ">=1.21 <=1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
