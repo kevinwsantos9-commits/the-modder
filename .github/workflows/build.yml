@@ -1,0 +1,32 @@
+name: Build The Modder
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Instalar Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Instalar Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.10.2
+
+      - name: Compilar o mod
+        run: gradle build
+
+      - name: Salvar o .jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: the-modder
+          path: build/libs/*.jar
